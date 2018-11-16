@@ -17,7 +17,7 @@
 
     <div *ngIf="loggedIn()" class="dropdown">
         <a class="dropdown-toggle text-light">
-            Welcome, User
+            Welcome, {{ authService.decodedToken?.unique_name }}
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -36,18 +36,3 @@
 
 
 </nav>
-
-<!-- <pre>
-    Form Valid: {{ loginForm.valid }}
-    Form Touched: {{ loginForm.touched }}
-    Form Dirty: {{ loginForm.dirty }}
-    Form Values: {{ loginForm.value | json }}
-    Username Valid: {{ username.valid }}
-    Username Touched: {{ username.touched }}
-    Username Dirty: {{ username.dirty }}
-    Username Values: {{ username.value }}
-    Password Valid: {{ password.valid }}
-    Password Touched: {{ password.touched }}
-    Password Dirty: {{ password.dirty }}
-    Password Values: {{ password.value }}
-</pre> -->
