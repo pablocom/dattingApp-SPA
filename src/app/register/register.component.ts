@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 
@@ -9,8 +9,6 @@ import { AlertifyService } from '../_services/alertify.service';
 })
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
-  // esto indica que le va a llegar por el selector
-  // un valor(me parece una mierda de forma pero bueno)
   model: any = {};
 
   constructor(private authService: AuthService, private alertify: AlertifyService) { }
@@ -29,4 +27,5 @@ export class RegisterComponent implements OnInit {
   cancel() {
     this.cancelRegister.emit(false);
   }
+
 }
